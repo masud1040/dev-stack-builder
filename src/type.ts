@@ -1,4 +1,4 @@
-export default interface Data {
+export default interface IData {
   id: string;
   name: string;
   category: string;
