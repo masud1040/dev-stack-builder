@@ -3,9 +3,15 @@ import { FaStar } from "react-icons/fa";
 
 interface TechnologyCardProps {
   technology: IData;
+  stack: IData[];
+  handleAddToStack: (technology: IData) => void;
 }
 
-const TechnologyCard = ({ technology }: TechnologyCardProps) => {
+const TechnologyCard = ({
+  technology,
+  stack,
+  handleAddToStack,
+}: TechnologyCardProps) => {
   return (
     <div className="card border border-gray-200 bg-base-100 p-4 shadow-sm">
   
@@ -32,9 +38,12 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
         <span className="text-sm text-yellow-500"><FaStar /> {technology.rating}</span>
       </div>
 
-      <button className="btn mt-4 w-full bg-gray-900 text-white rounded-b-sm">
-        Add to Stack
-      </button>
+      <button
+  onClick={() => handleAddToStack(technology)}
+  className="btn mt-4 w-full bg-gray-900 text-white"
+>
+  Add to Stack
+</button>
     </div>
   );
 };
