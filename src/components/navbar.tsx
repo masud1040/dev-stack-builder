@@ -4,7 +4,7 @@ import { FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
     return (
-     <div className="sticky top-0 border-b border-gray-100 bg-white ">
+     <div className="sticky top-0 z-50 border-b border-gray-100 bg-white ">
            <div className="container mx-auto flex flex-wrap items-center justify-between my-1.5">
             <div className="flex items-center">
                  <button className="btn btn-ghost btn-square md:hidden">

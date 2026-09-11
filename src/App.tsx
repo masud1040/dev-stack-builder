@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import "./App.css";
 import Hero from "./components/hero";
 import Navbar from "./components/navbar";
@@ -15,13 +15,20 @@ const DataPromise = async (): Promise<IData[]> => {
 function App() {
   const data = DataPromise();
   // console.log(data);
+
+ const [stack, setStack] = useState<IData[]>([]);
+
+  const handleAddToStack = (technology: IData) => {
+    setStack([...stack, technology]);
+  };
+
   return (
     <>
       <Navbar />
       <Hero />
 
       <Suspense fallback={<div>Loading...</div>}>
-        <Technologies data={data} />
+        <Technologies data={data} handleAddToStack={handleAddToStack} />
       </Suspense>
     </>
   );
