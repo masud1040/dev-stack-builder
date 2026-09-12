@@ -12,6 +12,13 @@ const TechnologyCard = ({
   stack,
   handleAddToStack,
 }: TechnologyCardProps) => {
+
+  const addedTechnology = stack.filter(
+    (item) => item.id === technology.id
+  );
+
+  const isAdded = addedTechnology.length > 0;
+
   return (
     <div className="card border border-gray-200 bg-base-100 p-4 shadow-sm">
   
@@ -38,11 +45,12 @@ const TechnologyCard = ({
         <span className="text-sm text-yellow-500"><FaStar /> {technology.rating}</span>
       </div>
 
-      <button
+  <button
   onClick={() => handleAddToStack(technology)}
+  disabled={isAdded}
   className="btn mt-4 w-full bg-gray-900 text-white"
 >
-  Add to Stack
+  {isAdded ? "Added to Stack" : "Add to Stack"}
 </button>
     </div>
   );

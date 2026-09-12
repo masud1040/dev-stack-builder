@@ -40,7 +40,7 @@ const Technologies = ({
 
         <div className="flex flex-col gap-5 lg:flex-row">
           
-          {/* Technology Cards */}
+        
           <div className="grid flex-1 grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {technologies.map((technology) => (
               <TechnologyCard
@@ -52,7 +52,7 @@ const Technologies = ({
             ))}
           </div>
 
-          {/* Your Stack */}
+        
           <div className="w-full lg:w-64">
             <div className="card border border-gray-200 bg-base-100 p-5 shadow-sm">
               
@@ -106,7 +106,7 @@ const Technologies = ({
                 </div>
               )}
 
-              {/* Remove All */}
+         
               {stack.length > 0 && (
                 <button
                   onClick={handleRemoveAll}
