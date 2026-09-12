@@ -1,32 +1,89 @@
-# React + TypeScript + Vite
+# A-5 Dev Stack Builder Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## About The Project
 
-Currently, two official plugins are available:
+Dev Stack Builder is a simple website where users can explore different technologies and create their own development stack.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Users can see technology details, add technologies to their stack, remove them, and clear the whole stack.
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Tailwind CSS
+- DaisyUI
+- React Toastify
+- JSON
+- Vite
 
-## Expanding the Oxlint configuration
+## Features
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+1. Users can explore different development technologies.
+2. Users can add technologies to their own stack.
+3. Users can remove one technology or remove all technologies from the stack.
+4. Toast messages are shown when adding or removing technologies.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+## React Questions and Answers
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### 1. What is JSX, and why is it used in React?
+
+**Answer:**
+
+JSX is a JavaScript syntax. It lets us write code like HTML inside JavaScript. It makes creating the UI easier in React.
+
+---
+
+### 2. What is the difference between props and state?
+
+**Answer:**
+
+Props are used to send data from a parent component to a child component.
+
+State is the data of a component that can be changed when needed.
+
+---
+
+### 3. What does the `useState` hook do, and where did you use it in this project?
+
+**Answer:**
+
+`useState` is used to store and change data in a component.
+
+In this project, I used `useState` to manage the technology data and the selected technology stack.
+
+---
+
+### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
+
+**Answer:**
+
+`useEffect` is used to do some work outside the normal rendering of a component.
+
+But I did not use `useEffect` to load the JSON data in this project. I used Promise, `useState`, and `Suspense`.
+
+---
+
+### 5. Why does every item in a `.map()` list need a unique `key` prop?
+
+**Answer:**
+
+React needs a unique key to know each item separately. It helps React update the items correctly when something changes.
+
+---
+
+### 6. What is conditional rendering? Show one place you used it.
+
+**Answer:**
+
+Conditional rendering means showing different UI based on a condition.
+
+I used it in the Your Stack section. When the stack is empty, it shows an empty message.
+
+```tsx
+{stack.length === 0 ? (
+  <div>Your stack is empty.</div>
+) : (
+  <div>
+    {/* Selected technologies */}
+  </div>
+)}

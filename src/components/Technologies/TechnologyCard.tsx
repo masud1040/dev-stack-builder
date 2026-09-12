@@ -1,3 +1,4 @@
+import { FiCheck } from "react-icons/fi";
 import type IData from "../../type";
 import { FaStar } from "react-icons/fa";
 
@@ -45,12 +46,19 @@ const TechnologyCard = ({
         <span className="text-sm text-yellow-500"><FaStar /> {technology.rating}</span>
       </div>
 
-  <button
+<button
   onClick={() => handleAddToStack(technology)}
   disabled={isAdded}
   className="btn mt-4 w-full bg-gray-900 text-white"
 >
-  {isAdded ? "Added to Stack" : "Add to Stack"}
+  {isAdded ? (
+    <>
+      <FiCheck/>
+      Added to Stack
+    </>
+  ) : (
+    "Add to Stack"
+  )}
 </button>
     </div>
   );
