@@ -20,7 +20,7 @@ const Hero = () => {
           </p>
 
           <div className="mt-5 flex justify-center gap-3 md:justify-start">
-            <button className="button-gradient p-3 rounded-xl">
+            <button className="button-gradient p-3 rounded-xl text-white ">
               Explore Technologies
             </button>
 
