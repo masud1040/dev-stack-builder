@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="mt-10 border-t border-gray-200">
       <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col gap-8 md:flex-row md:justify-between">
+        <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between ">
           <div className="md:w-1/2">
             <img src={logo} alt="logo" />
 
@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+         <div className="hidden md:block">
             <h2 className="mb-3 text-sm font-bold">PRODUCT</h2>
 
             <ul className="space-y-2 text-sm text-gray-500">
@@ -30,7 +30,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+         <div className="hidden md:block">
             <h2 className="mb-3 text-sm font-bold">COMPANY</h2>
 
             <ul className="space-y-2 text-sm text-gray-500">
@@ -40,7 +40,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+        <div className="hidden md:block">
             <h2 className="mb-3 text-sm font-bold">LEGAL</h2>
 
             <ul className="space-y-2 text-sm text-gray-500">
