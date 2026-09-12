@@ -38,7 +38,7 @@ function App() {
       <Navbar />
       <Hero />
 
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading..</div>}>
  <Technologies
   data={data}
   stack={stack}
